@@ -1,0 +1,15 @@
+---
+BasedOnStyle: Google
+AccessModifierOffset: '-4'
+BinPackArguments: 'false'
+BinPackParameters: 'false'
+ColumnLimit: '100'
+FixNamespaceComments: 'false'
+IndentWidth: '4'
+IndentPPDirectives: AfterHash
+KeepEmptyLinesAtTheStartOfBlocks: 'true'
+NamespaceIndentation: All
+TabWidth: '4'
+UseTab: Never
+
+...

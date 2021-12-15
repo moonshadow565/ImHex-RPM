@@ -1,0 +1,5 @@
+[submodule "ImHex"]
+	path = ImHex
+	url = https://github.com/WerWolv/ImHex
+[submodule "ImHex/"]
+	branch = v1.12.0
