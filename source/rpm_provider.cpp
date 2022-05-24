@@ -1,13 +1,24 @@
 #include "rpm_provider.hpp"
 
+#include <imgui.h>
 #include <psapi.h>
 #include <tlhelp32.h>
 
+#include <hex/api/localization.hpp>
 #include <hex/helpers/fmt.hpp>
+#include <hex/ui/view.hpp>
+#include <pl/evaluator.hpp>
+#include <pl/token.hpp>
+#include <pl/pattern_language.hpp>
 #include <regex>
 
 namespace hex::plugin::rpm {
-    RPMProvider::RPMProvider() : Provider() {}
+    RPMProvider::RPMProvider() : Provider() {
+        m_patternLanguageRuntime->addFunction({}, "RPM_EXE_BASE", {},
+        [this] (pl::Evaluator* ctx, std::vector<pl::Token::Literal> const& params) {
+          return u128(this->base_);
+        });
+    }
 
     RPMProvider::~RPMProvider() { this->close(); }
 
